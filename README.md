@@ -13,6 +13,15 @@ No extra packages required besides `luci-base`.
 ## Screenshot
 (You can add your screenshot here later)
 
+## Screenshot
+
+<p align="center">
+  <img src="screenshots/IMG_20260315_214640.jpg" alt="Azizi NetSpeed Realtime Monitor" width="80%">
+  <br>
+  <em>Realtime per-IP upload/download speeds in LuCI Status tab</em>
+</p>
+
+
 ## Installation (manual)
 
 ```bash
