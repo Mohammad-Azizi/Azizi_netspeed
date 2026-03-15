@@ -19,20 +19,12 @@ No extra packages required besides `luci-base`.
 </p>
 
 
-## Installation (manual)
+## Download & Install
 
+Latest release (v1.0):  
+[Download .ipk package & install script →](https://github.com/Mohammad-Azizi/azizi-netspeed/releases/latest)
+
+One-line install (after downloading):
 ```bash
-# 1. Create directories
-mkdir -p /usr/lib/lua/luci/controller /usr/lib/lua/luci/view/azizi_netspeed /etc/hotplug.d/iface
-
-# 2. Copy files (use scp or wget from raw github urls later)
-# ... copy azizi_netspeed.lua, realtime.htm, azizi_nft_generator.sh ...
-
-# 3. Make script executable
-chmod +x /etc/hotplug.d/iface/azizi_nft_generator.sh
-
-# 4. Run generator once
-/etc/hotplug.d/iface/azizi_nft_generator.sh
-
-# 5. Refresh LuCI
+opkg install luci-azizi-netspeed_1.0-1_all.ipk
 rm -rf /tmp/luci-* && /etc/init.d/uhttpd restart
