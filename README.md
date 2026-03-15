@@ -22,7 +22,7 @@ No extra packages required besides `luci-base`.
 ## Download & Install
 
 Latest release (v1.0):  
-[Download .ipk package & install script →](https://github.com/Mohammad-Azizi/azizi-netspeed/releases/latest)
+[Download .ipk package & install script →](https://github.com/Mohammad-Azizi/Azizi_netspeed/releases/tag/v1.0)
 
 One-line install (after downloading):
 ```bash
