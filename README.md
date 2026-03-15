@@ -28,3 +28,5 @@ One-line install (after downloading):
 ```bash
 opkg install luci-azizi-netspeed_1.0-1_all.ipk
 rm -rf /tmp/luci-* && /etc/init.d/uhttpd restart
+```
+or you can install using openwrt ui System->Software->upload package
