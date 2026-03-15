@@ -10,13 +10,10 @@ No extra packages required besides `luci-base`.
 - Works on OpenWrt 22.03 / 23.05 / 24.10+
 - Pure LuCI integration (appears under Status menu)
 
-## Screenshot
-(You can add your screenshot here later)
-
-## Screenshot
+## Screenshots
 
 <p align="center">
-  <img src="screenshots/IMG_20260315_214640.jpg" alt="Azizi NetSpeed Realtime Monitor" width="80%">
+  <img src="screenshots/IMG_20260315_214640.jpg" alt="Azizi NetSpeed Realtime Monitor" width="100%">
   <br>
   <em>Realtime per-IP upload/download speeds in LuCI Status tab</em>
 </p>
