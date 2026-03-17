@@ -15,14 +15,14 @@ No extra packages required besides `luci-base`.
 <p align="center">
   <img src="screenshots/IMG_20260315_214640.jpg" alt="Azizi NetSpeed Realtime Monitor" width="100%">
   <br>
-  <em>this UI is from v1.0</em>
+  <em>This UI is from v1.0</em>
 </p>
 
 
 <p align="center">
   <img src="screenshots/IMG_20260317_103322.jpg" alt="Azizi NetSpeed Realtime Monitor" width="100%">
   <br>
-  <em>this UI is from v1.0</em>
+  <em>This UI is from v2.0</em>
 </p>
 
 
@@ -35,7 +35,7 @@ No extra packages required besides `luci-base`.
 
 ## Download & Install
 
-Latest release (v1.0):  
+Latest release (v2.0):  
 [Download .ipk package & install script →](https://github.com/Mohammad-Azizi/Azizi_netspeed/releases/tag/v1.0)
 
 One-line install (after downloading):
