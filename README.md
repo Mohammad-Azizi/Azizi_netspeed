@@ -15,7 +15,21 @@ No extra packages required besides `luci-base`.
 <p align="center">
   <img src="screenshots/IMG_20260315_214640.jpg" alt="Azizi NetSpeed Realtime Monitor" width="100%">
   <br>
-  <em>Realtime per-IP upload/download speeds in LuCI Status tab</em>
+  <em>this UI is from v1.0</em>
+</p>
+
+
+<p align="center">
+  <img src="screenshots/IMG_20260317_103322.jpg" alt="Azizi NetSpeed Realtime Monitor" width="100%">
+  <br>
+  <em>this UI is from v1.0</em>
+</p>
+
+
+<p align="center">
+  <img src="screenshots/IMG_20260317_103423.jpg" alt="Azizi NetSpeed Realtime Monitor" width="100%">
+  <br>
+  <em>this UI is from v1.0</em>
 </p>
 
 
