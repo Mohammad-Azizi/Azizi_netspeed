@@ -16,11 +16,9 @@ I built this because I needed something lightweight enough to run on an Archer C
 
 ## Screenshots
 
-<p align="center">
-  <img src="./screenshots/image1.jpg" width="30%">
-  <img src="./screenshots/image2.jpg" width="30%">
-  <img src="./screenshots/image3.jpg" width="30%">
-</p>
+![](./screenshots/image1.jpg)
+![](./screenshots/image2.jpg)
+![](./screenshots/image3.jpg)
 
 ## Features
 - **Live per-device speeds** — see who's downloading what, right now
