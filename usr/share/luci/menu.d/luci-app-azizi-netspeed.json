@@ -1,0 +1,10 @@
+{
+    "admin/status/azizi_netspeed": {
+        "title": "Network Speed",
+        "action": {
+            "type": "view",
+            "path": "azizi_netspeed/monitor"
+        },
+        "order": 1
+    }
+}

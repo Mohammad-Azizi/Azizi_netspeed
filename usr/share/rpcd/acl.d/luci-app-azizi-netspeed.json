@@ -1,0 +1,17 @@
+{
+  "luci-app-azizi-netspeed-monitor": {
+    "description": "Main Page access",
+    "read": {
+      "file": {
+        "/www/luci-static/resources/view/status/include": [ "list" ],
+        "/proc/net/arp": [ "read" ]
+      },
+      "ubus": {
+        "file": [ "list", "read", "exec" ],
+        "system": [ "board", "info" ],
+        "luci-rpc": [ "getDHCPLeases", "getHostHints" ],
+        "iwinfo": [ "assoclist" ]
+      }
+    }
+  }
+}
