@@ -10,18 +10,19 @@ Per-device network speed and bandwidth monitor for OpenWrt
 ![Release](https://img.shields.io/github/v/release/Mohammad-Azizi/Azizi_netspeed?color=orange)
 
 ---
-
-## What is this?
-
 Azizi_NetSpeed adds a real-time network monitor to the OpenWrt LuCI interface. It shows per-device upload/download speeds and total data usage using nftables kernel counters, running entirely on the router with minimal overhead.
 
 I built this because I needed something lightweight enough to run on an Archer C50 v6 (8MB flash, single-core MIPS, 64MB RAM) without slowing anything down. Most monitoring tools are way too heavy for that kind of hardware.
 
-![Live Dashboard](./screenshots/image1.jpg)
-![Live Dashboard](./screenshots/image2.jpg)
-![Live Dashboard](./screenshots/image3.jpg)
-## Features
+## Screenshots
 
+<p align="center">
+  <img src="./screenshots/image1.jpg" width="30%">
+  <img src="./screenshots/image2.jpg" width="30%">
+  <img src="./screenshots/image3.jpg" width="30%">
+</p>
+
+## Features
 - **Live per-device speeds** — see who's downloading what, right now
 - **Total usage tracking** — bytes and packet counts per IP, reset daily
 - **Online/offline status** — based on actual nftables timeout expiry, not guesswork
