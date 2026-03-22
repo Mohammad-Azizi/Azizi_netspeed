@@ -17,7 +17,13 @@ I built this because I needed something lightweight enough to run on an Archer C
 ## Screenshots
 
 ![](./screenshots/image1.jpg)
+
+<br>
+
 ![](./screenshots/image2.jpg)
+
+<br>
+
 ![](./screenshots/image3.jpg)
 
 ## Features
@@ -68,7 +74,7 @@ If your router runs OpenWrt with LuCI, you almost certainly have everything you 
 1. Download the latest `.ipk` from the [Releases](https://github.com/Mohammad-Azizi/Azizi_netspeed/releases) page
 2. Open your router's admin panel → **System** → **Software**
 3. Click **Upload Package**, select the file, and install
-4. Refresh the page — "NetSpeed" will appear in the top navigation menu
+4. Refresh the page — "Network Speed" will appear in Status
 
 ### Option B: SSH
 
