@@ -17,8 +17,9 @@ Azizi_NetSpeed adds a real-time network monitor to the OpenWrt LuCI interface. I
 
 I built this because I needed something lightweight enough to run on an Archer C50 v6 (8MB flash, single-core MIPS, 64MB RAM) without slowing anything down. Most monitoring tools are way too heavy for that kind of hardware.
 
-![Dashboard Preview](./screenshot/image1.jpg)
-
+![Live Dashboard](./screenshots/image1.jpg)
+![Live Dashboard](./screenshots/image2.jpg)
+![Live Dashboard](./screenshots/image3.jpg)
 ## Features
 
 - **Live per-device speeds** — see who's downloading what, right now
@@ -34,6 +35,10 @@ I built this because I needed something lightweight enough to run on an Archer C
 The package integrates with fw4 by adding nftables sets to track per-IP traffic using kernel counters. The LuCI interface reads these counters periodically and calculates real-time speeds without background processes.
 
 A daily cron job saves usage data and resets counters for the next cycle.
+
+Click the "Yesterday's Total Usage" bar to expand the full breakdown. Data is saved automatically at 11:59 PM and counters reset for the new day.
+
+
 
 ```
 ┌─────────────┐     nftables sets      ┌──────────────┐
@@ -74,25 +79,12 @@ cd /tmp
 opkg install luci-app-azizi-netspeed_*_all.ipk
 ```
 
-That's it. No extra configuration needed. The firewall restarts automatically during install to load the nftables rules.
 
-## Screenshots
+### Uninstalling
 
-### Real-time dashboard
-
-Live speed display with online/offline status tags. Devices are sorted by current activity — the heaviest user is always at the top.
-
-![Live Dashboard](./screenshots/image2.jpg)
-
-### Yesterday's archived data
-
-Click the "Yesterday's Total Usage" bar to expand the full breakdown. Data is saved automatically at 11:59 PM and counters reset for the new day.
-
-### Mobile view
-
-Same dashboard, same data, just reformatted for small screens. No separate mobile app needed.
-
-![Mobile View](./screenshots/image3.jpg)
+```bash
+opkg remove luci-app-azizi-netspeed
+```
 
 ## Configuration
 
@@ -110,17 +102,6 @@ The default reset runs at 11:59 PM. To change it:
 
 # Example: run at 6:00 AM instead
 0 6 * * * /root/azizi_netspeed_save
-```
-
-### Adjusting the timeout window
-
-By default, devices that haven't sent any traffic for 24 hours are automatically removed from the tracking sets (to save memory).
-
-
-## Uninstalling
-
-```bash
-opkg remove luci-app-azizi-netspeed
 ```
 
 ## FAQ
