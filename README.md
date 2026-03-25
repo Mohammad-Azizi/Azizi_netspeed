@@ -17,17 +17,17 @@ I built this because I needed something lightweight enough to run on an Archer C
 
 ## 📸 Screenshots
 
-### 🔹 v3 (Latest)
-![v3](./screenshots/image_v3.0.jpg)
+### 🔹 v3.0 (Latest)
+![v3.0](./screenshots/image_v3.0.jpg)
 
-### 🔹 v2
-![v2](./screenshots/image1.jpg)
+### 🔹 v2.0
+![v2.0](./screenshots/image1.jpg)
 
-### 🔹 v2
-![v2](./screenshots/image2.jpg)
+### 🔹 v2.0
+![v2.0](./screenshots/image2.jpg)
 
-### 🔹 v1
-![v1](./screenshots/image0.jpg)
+### 🔹 v1.0
+![v1.0](./screenshots/image0.jpg)
 
 
 
