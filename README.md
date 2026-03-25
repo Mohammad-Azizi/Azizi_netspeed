@@ -14,17 +14,22 @@ Azizi_NetSpeed adds a real-time network monitor to the OpenWrt LuCI interface. I
 
 I built this because I needed something lightweight enough to run on an Archer C50 v6 (8MB flash, single-core MIPS, 64MB RAM) without slowing anything down. Most monitoring tools are way too heavy for that kind of hardware.
 
-## Screenshots
 
-![](./screenshots/image1.jpg)
+## 📸 Screenshots
 
-<br>
+### 🔹 v3 (Latest)
+![v3](./screenshots/image_v3.0.jpg)
 
-![](./screenshots/image2.jpg)
+### 🔹 v2
+![v2](./screenshots/image1.jpg)
 
-<br>
+### 🔹 v2
+![v2](./screenshots/image2.jpg)
 
-![](./screenshots/image3.jpg)
+### 🔹 v1
+![v1](./screenshots/image0.jpg)
+
+
 
 ## Features
 - **Live per-device speeds** — see who's downloading what, right now
@@ -33,7 +38,36 @@ I built this because I needed something lightweight enough to run on an Archer C
 - **Yesterday's usage** — collapsible panel showing archived data from the previous day
 - **Mobile friendly** — responsive layout, works fine on phone browsers
 - **Zero background processes** — no daemons, no polling scripts, everything runs in-kernel
+
+- **Bandwidth Limiting for IPs & Ranges**  
+  Limit single devices or entire IP ranges (e.g. `192.168.1.100-192.168.1.150` or `192.168.1.0/24`).
+
+- **Two Limit Modes**  
+  - **Strict (DDC)**: Hard cap — device cannot exceed the set speed.  
+  - **Shared**: Minimum guaranteed speed + ability to borrow extra bandwidth when the network is idle.
+
+- **Priority System**  
+  Set devices or ranges as **High**, **Normal**, or **Low** priority. High priority traffic gets served first during congestion.
+
+- **Low Ping / Gaming Optimization**  
+  Enable Cake qdisc with `diffserv4` + `ack-filter` for significantly reduced latency while downloading/uploading.
+
+- **Advanced Scheduling**  
+  Set custom time windows (Start Time & End Time) and choose specific days of the week. Rules automatically activate/deactivate.
+
+- **Global Settings Panel**  
+  Configure **Max ISP Download/Upload speeds**, **LAN Interface**, and **WAN Interface** directly from the web UI — no more editing scripts.
+
+- **Dedicated QoS Rules Manager**  
+  New table showing all active limits, schedules, and priorities with easy Edit/Delete buttons.
+
+- **Reboot Persistence**  
+  All settings and rules now survive router reboots automatically.
+
+
 - **Tiny footprint** — the whole package is under 8KB installed
+
+
 
 ## How it works
 

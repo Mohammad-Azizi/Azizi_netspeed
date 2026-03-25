@@ -2,8 +2,8 @@
 
 # Configuration
 PKG_NAME="luci-app-azizi-netspeed"
-PKG_VER="2.0"
-SRC_DIR="/sdcard/azizi_netspeed2"
+PKG_VER="3.0"
+SRC_DIR="/sdcard/luci-app-azizi-netspeed/luci-app-azizi-netspeed"
 TEMP_DIR="$HOME/ipk_temp2"
 
 echo "Building $PKG_NAME v$PKG_VER ..."
@@ -18,7 +18,8 @@ rm -rf "$TEMP_DIR"
 # Create ALL required directories EXPLICITLY (fixes your error!)
 mkdir -p "$TEMP_DIR/CONTROL"
 mkdir -p "$TEMP_DIR/etc/nftables.d/"
-mkdir -p "$TEMP_DIR/root/"
+mkdir -p "$TEMP_DIR/root/azizi_netspeed/usage/"
+mkdir -p "$TEMP_DIR/root/azizi_netspeed/bwlimit/"
 mkdir -p "$TEMP_DIR/etc/crontabs/"
 mkdir -p "$TEMP_DIR/usr/share/luci/menu.d"
 mkdir -p "$TEMP_DIR/usr/share/rpcd/acl.d"
@@ -41,7 +42,9 @@ cp "$SRC_DIR/usr/share/luci/menu.d/luci-app-azizi-netspeed.json" "$TEMP_DIR/usr/
 
 
 
-cp "$SRC_DIR/root/azizi_netspeed_save.sh" "$TEMP_DIR/root/"
+cp "$SRC_DIR/root/azizi_netspeed/usage/azizi_netspeed_save.sh" "$TEMP_DIR/root/azizi_netspeed/usage/"
+
+cp "$SRC_DIR/root/azizi_netspeed/bwlimit/apply_limits.sh" "$TEMP_DIR/root/azizi_netspeed/bwlimit/"
 
 
 
@@ -63,7 +66,7 @@ Priority: optional
 Architecture: all
 Installed-Size: $SIZE
 Maintainer: Mohammad Azizi <mohammad.afg.contact@gmail.com>
-Depends: libc, luci-base, nftables, rpcd
+Depends: luci-base, rpcd, nftables, tc-tiny, kmod-sched-core, kmod-sched-cake, jsonfilter
 License: Apache-2.0
 Source: https://github.com/mohammadazizi/luci-app-azizi-netspeed
 Description: A lightweight real-time network speed and traffic monitor using nftables
@@ -76,14 +79,15 @@ cat <<'EOF' > "$TEMP_DIR/CONTROL/postinst"
 # Check if we are installing on a running system (not a build image)
 if [ -z "$IPKG_INSTROOT" ]; then
     echo "Setting file permissions..."
-    chmod 755 /root/azizi_netspeed_save.sh
+    chmod 755 /root/azizi_netspeed/usage/azizi_netspeed_save.sh
+    chmod 755 /root/azizi_netspeed/bwlimit/apply_limits.sh
     chmod 755 /etc/nftables.d/azizi_monitor.nft
     
     
     
     # SAFELY Inject cron job if it doesn't exist
     if ! grep -q "azizi_netspeed_save.sh" /etc/crontabs/root 2>/dev/null; then
-        echo "59 23 * * * /root/azizi_netspeed_save.sh" >> /etc/crontabs/root
+        echo "59 23 * * * /root/azizi_netspeed/usage/azizi_netspeed_save.sh" >> /etc/crontabs/root
         /etc/init.d/cron restart
     fi
   
@@ -113,7 +117,9 @@ if [ -z "$IPKG_INSTROOT" ]; then
     nft delete set inet fw4 down_per_ip 2>/dev/null
 
     # Remove JSON logs
-    rm -rf /root/azizi_netspeed_yu
+    rm -rf /root/azizi_netspeed
+    rm -rf /tmp/qos_last_state
+    
 
 
     # SAFELY Remove our specific cron job without touching user's other jobs

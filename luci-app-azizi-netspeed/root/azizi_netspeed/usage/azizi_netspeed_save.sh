@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIR="/root/azizi_netspeed_yu"
+DIR="/root/azizi_netspeed/usage/"
 UP_FILE="$DIR/up_per_ip.json"
 DOWN_FILE="$DIR/down_per_ip.json"
 HOSTS_FILE="$DIR/hosts.json"
